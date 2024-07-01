@@ -84,6 +84,8 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+#WKHTMLTOPDF_CMD = os.path.join(BASE_DIR, 'wkhtmltopdf/bin/wkhtmltopdf.exe')
+
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')

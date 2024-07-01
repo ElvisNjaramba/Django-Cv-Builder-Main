@@ -9,11 +9,20 @@ from django.contrib import messages
 from django.urls import reverse
 from .mixins import (OwnerResumeUpdateView, OwnerResumeCreateView,
                      OwnerResumeDeleteView, SaveModelOrderMixin)
-from wkhtmltopdf.views import PDFTemplateView
+
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
+from django.views.generic import TemplateView
+from django.template.loader import render_to_string
+import subprocess 
+from django.http import HttpResponse
+from django.template.loader import get_template
+from io import BytesIO
+import pdfkit
+from wkhtmltopdf.views import PDFTemplateView
 
 @login_required
 def index(request):
@@ -64,6 +73,7 @@ class PDFView(PDFTemplateView):
         'margin-left': 0,
         'margin-right': 0,
         'margin-bottom': 3,
+        
     }
 
     def get_filename(self):
@@ -101,6 +111,7 @@ class PDFView(PDFTemplateView):
             'template_name': template_name,
             'color': color
         }
+
 
 #@login_required
 class MainPage(LoginRequiredMixin, View):

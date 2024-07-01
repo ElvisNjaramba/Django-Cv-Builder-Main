@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -9,38 +10,22 @@
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon" />
-    <link
-      href="{% static 'assets/img/apple-touch-icon.png' %}"
-      rel="apple-touch-icon"
-    />
+    <link href="{% static 'assets/img/iii resume real.png' %}" rel="icon" />
+    <link href="{% static 'assets/img/iii resume real.png' %}" rel="apple-touch-icon" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
     <!-- Vendor CSS Files -->
-    <link
-      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
-      rel="stylesheet"
-    />
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
     <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet" />
-    <link
-      href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}"
-      rel="stylesheet"
-    />
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
 
     <!-- Main CSS File -->
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet" />
@@ -48,65 +33,44 @@
 
   <body class="index-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
-      <div
-        class="container-fluid position-relative d-flex align-items-center justify-content-between"
-      >
-        <a
-          href="index.html"
-          class="logo d-flex align-items-center me-auto me-xl-0"
-        >
+      <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+        <a href="{% url 'cvbuilder:MainPage' %}" class="logo d-flex align-items-center me-auto me-xl-0">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">Cv BUILDER</h1>
+          <img src="{% static 'assets/img/iii resume real.png' %}" alt="">
+          <h1 class="sitename">i-resume</h1>
           <span>.</span>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
             <li>
-              <a href="{% url 'cvbuilder:index' %}" class="active"
-                >Home<br
-              /></a>
+              <a href="{% url 'cvbuilder:index' %}" class="active">Home<br /></a>
             </li>
             <li><a href="{% url 'cvbuilder:MainPage' %}">Resume Details</a></li>
             <li>
-              <a href="{% url 'cvbuilder:ResumePreview' %}"
-                >Preview your resume</a
-              >
+              <a href="{% url 'cvbuilder:ResumePreview' %}">Preview your resume</a>
             </li>
             <li class="dropdown">
-              <a href="#"
-                ><span>Create CV</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i
-              ></a>
+              <a href="#"><span>Create CV</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li>
-                  <a href="{% url 'cvbuilder:CreateExperience' %}"
-                    >Add Experience</a
-                  >
+                  <a href="{% url 'cvbuilder:CreateExperience' %}">Add Experience</a>
                 </li>
                 <li>
                   <a href="{% url 'cvbuilder:CreateSkill' %}">Add Skill</a>
                 </li>
                 <li>
-                  <a href="{% url 'cvbuilder:CreateEducation' %}"
-                    >Add Education</a
-                  >
+                  <a href="{% url 'cvbuilder:CreateEducation' %}">Add Education</a>
                 </li>
                 <li>
-                  <a href="{% url 'cvbuilder:CreateLanguage' %}"
-                    >Add Language</a
-                  >
+                  <a href="{% url 'cvbuilder:CreateLanguage' %}">Add Language</a>
                 </li>
                 <li>
-                  <a href="{% url 'cvbuilder:CreateAchievement' %}"
-                    >Add Achievement</a
-                  >
+                  <a href="{% url 'cvbuilder:CreateAchievement' %}">Add Achievement</a>
                 </li>
                 <li>
-                  <a href="{% url 'cvbuilder:CreatePublication' %}"
-                    >Add Publication</a
-                  >
+                  <a href="{% url 'cvbuilder:CreatePublication' %}">Add Publication</a>
                 </li>
               </ul>
             </li>
@@ -126,24 +90,15 @@
       <section id="hero" class="hero section">
         <div
           class="container d-flex flex-column justify-content-center align-items-center text-center position-relative"
-          data-aos="zoom-out"
-        >
-          <img
-            src="{% static 'assets/img/hero-img.svg' %}"
-            class="img-fluid animated"
-            alt=""
-          />
+          data-aos="zoom-out">
+          <img src="{% static 'assets/img/hero-img.svg' %}" class="img-fluid animated" alt="" />
           <h1>
             Only 2% of resumes make it past the first round.
             <span>Be in the top 2%</span>
           </h1>
           <p></p>
           <div class="d-flex">
-            <a
-              href="{% url 'cvbuilder:MainPage' %}"
-              class="btn-get-started scrollto"
-              >Create Resume</a
-            >
+            <a href="{% url 'cvbuilder:MainPage' %}" class="btn-get-started scrollto">Create Resume</a>
           </div>
         </div>
       </section>
@@ -153,17 +108,11 @@
       <section id="featured-services" class="featured-services section">
         <div class="container">
           <div class="row gy-4">
-            <div
-              class="col-xl-3 col-md-6 d-flex"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
               <div class="service-item position-relative">
                 <div class="icon"><i class="bi bi-activity icon"></i></div>
                 <h4>
-                  <a href="" class="stretched-link"
-                    >Easy online resume builder</a
-                  >
+                  <a href="" class="stretched-link">Easy online resume builder</a>
                 </h4>
                 <p>
                   Create an awesome resume in minutes, without leaving your web
@@ -173,11 +122,7 @@
             </div>
             <!-- End Service Item -->
 
-            <div
-              class="col-xl-3 col-md-6 d-flex"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
               <div class="service-item position-relative">
                 <div class="icon">
                   <i class="bi bi-chat-left-text icon"></i>
@@ -191,11 +136,7 @@
             </div>
             <!-- End Service Item -->
 
-            <div
-              class="col-xl-3 col-md-6 d-flex"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
               <div class="service-item position-relative">
                 <div class="icon">
                   <i class="bi bi-laptop icon"></i>
@@ -209,11 +150,7 @@
             </div>
             <!-- End Service Item -->
 
-            <div
-              class="col-xl-3 col-md-6 d-flex"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
               <div class="service-item position-relative">
                 <div class="icon"><i class="bi bi-broadcast icon"></i></div>
                 <h4><a href="" class="stretched-link">Shareable CV Link</a></h4>
@@ -234,9 +171,7 @@
       <section id="call-to-action" class="call-to-action section">
         <div class="container" data-aos="zoom-out">
           <div class="row g-5">
-            <div
-              class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first"
-            >
+            <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
               <h3>So much more than a <em>resume builder</em></h3>
               <p>
                 Your job starts with a resume, but what about the interview?
@@ -244,22 +179,14 @@
                 career tools. It’s the complete career toolkit, all in one
                 place. If you're here, you're already on the way up.
               </p>
-              <a
-                class="cta-btn align-self-start"
-                href="{% url 'cvbuilder:MainPage' %}"
-                >Create Cv</a
-              >
+              <a class="cta-btn align-self-start" href="{% url 'cvbuilder:MainPage' %}">Create Cv</a>
             </div>
 
-            <div
-              class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center"
-            >
+            <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
               <div class="img">
                 <img
                   src="https://static.wixstatic.com/media/ba32b2_ae38a9ae1be749b9b8ebd79779081526~mv2.jpg/v1/fill/w_605,h_465,al_c,q_80,usm_0.66_1.00_0.01/ba32b2_ae38a9ae1be749b9b8ebd79779081526~mv2.jpg"
-                  alt=""
-                  class="img-fluid"
-                />
+                  alt="" class="img-fluid" />
               </div>
             </div>
           </div>
@@ -267,47 +194,40 @@
       </section>
       <!-- /Call To Action Section -->
 
-            
 
-    <footer id="footer" class="footer">
-      <div class="copyright text-center">
-        <div
-          class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center"
-        >
+
+      <footer id="footer" class="footer">
+        <div class="copyright text-center">
           <div
-            class="d-flex flex-column align-items-center align-items-lg-start"
-          >
-            <div>
-              © Copyright <strong><span>Cv Builder</span></strong
-              >. All Rights Reserved
+            class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+            <div class="d-flex flex-column align-items-center align-items-lg-start">
+              <div>
+                © Copyright <strong><span>Cv Builder</span></strong>. All Rights Reserved
+              </div>
             </div>
+
           </div>
-
         </div>
-      </div>
-    </footer>
+      </footer>
 
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+      <!-- Scroll Top -->
+      <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+          class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+      <!-- Preloader -->
+      <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
-    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
-    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-    <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+      <!-- Vendor JS Files -->
+      <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+      <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+      <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
 
-    <!-- Main JS File -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
+      <!-- Main JS File -->
+      <script src="{% static 'assets/js/main.js' %}"></script>
   </body>
+
 </html>

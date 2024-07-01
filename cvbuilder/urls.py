@@ -41,5 +41,5 @@ urlpatterns = [
     path('save_publication_order/', views.SavePublicationOrder.as_view(), name='SavePublicationOrder'),
 
     path('share/<str:code>', views.SharedResumePreview.as_view(), name='SharedResumePreview'),
-    path('download_pdf/', views.PDFView.as_view(), name='pdf')
+    path('download_pdf/', views.PDFView.as_view(), name='download_pdf')
 ]

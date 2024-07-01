@@ -27,6 +27,7 @@ class Resume(models.Model):
     website = models.CharField(max_length=255, blank=True)
     template = models.ForeignKey(Template, on_delete=models.CASCADE, null=True, blank=True)
     code = models.CharField(max_length=8, default="", blank=True, unique=True)
+    color = models.CharField(max_length=20, default='blue')
 
     def __str__(self):
         return '%s - %s' % (self.name, self.description)
